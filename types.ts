@@ -1,4 +1,4 @@
-export enum IssueCategory {
+﻿export enum IssueCategory {
   ROAD = 'Road Damage',
   ELECTRICITY = 'Electricity Issues',
   SANITATION = 'Garbage/Sanitation',

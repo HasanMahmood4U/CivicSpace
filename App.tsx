@@ -1,9 +1,55 @@
 import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { IssueSelector } from './components/IssueSelector';
+import React, { useState } from 'react';
+import { Header } from './components/Header';
+import { IssueSelector } from './components/IssueSelector';
 import { ComplaintForm } from './components/ComplaintForm';
 import { LetterDisplay } from './components/LetterDisplay';
 
+import { AlertTriangle } from 'lucide-react';
+
+const App: React.FC = () => {
+  const [formData, setFormData] = useState<ComplaintFormData>({
+    category: null,
+    location: '',
+    description: '',
+    userName: '',
+    urgency: 'Normal',
+
+    import React, { useState } from 'react';
+    import { Header } from './components/Header';
+    import { IssueSelector } from './components/IssueSelector';
+    import { ComplaintForm } from './components/ComplaintForm';
+    import { LetterDisplay } from './components/LetterDisplay';
+    import { ComplaintFormData, IssueCategory, GeneratedLetter } from './types';
+    import { generateComplaintLetter } from './services/geminiService';
+    import { AlertTriangle } from 'lucide-react';
+
+    const App: React.FC = () => {
+      const [formData, setFormData] = useState<ComplaintFormData>({
+        category: null,
+        location: '',
+        description: '',
+        userName: '',
+        urgency: 'Normal',
+        
+      });
+
+      const [letterState, setLetterState] = useState<GeneratedLetter>({
+        content: '',
+        isGenerating: false,
+        error: null
+      });
+
+      const [step, setStep] = useState<'select' | 'details' | 'result'>('select');
+import React, { useState } from 'react';
+import { Header } from './components/Header';
+import { IssueSelector } from './components/IssueSelector';
+import { ComplaintForm } from './components/ComplaintForm';
+import { LetterDisplay } from './components/LetterDisplay';
+import { ComplaintFormData, IssueCategory, GeneratedLetter } from './types';
+import { generateComplaintLetter } from './services/geminiService';
 import { AlertTriangle } from 'lucide-react';
 
 const App: React.FC = () => {
@@ -54,7 +100,7 @@ const App: React.FC = () => {
       description: '',
       userName: '',
       urgency: 'Normal',
-      image: null
+            
     });
     setLetterState({ content: '', isGenerating: false, error: null });
   };
