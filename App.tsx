@@ -3,8 +3,7 @@ import { Header } from './components/Header';
 import { IssueSelector } from './components/IssueSelector';
 import { ComplaintForm } from './components/ComplaintForm';
 import { LetterDisplay } from './components/LetterDisplay';
-import { ComplaintFormData, IssueCategory, GeneratedLetter } from './types';
-import { generateComplaintLetter } from './services/geminiService';
+
 import { AlertTriangle } from 'lucide-react';
 
 const App: React.FC = () => {
